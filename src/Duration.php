@@ -2,6 +2,7 @@
 
 namespace Mpietrucha\Support;
 
+use Illuminate\Support\Sleep;
 use Mpietrucha\Support\Concerns\Forwardable;
 
 class Duration
@@ -10,6 +11,6 @@ class Duration
 
     public function __construct(int|DateInterval $duration = null)
     {
-        // $this->forward()->to(Sleep::class);
+        $this->forward()->source(Sleep::class, $duration ?? 0);
     }
 }
