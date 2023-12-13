@@ -9,7 +9,7 @@ class Duration
 {
     use Forwardable;
 
-    public function __construct(int|DateInterval $duration = null)
+    public function __construct(int|DateInterval|null $duration = null)
     {
         $this->forward()->source(Sleep::class, $duration ?? 0);
     }
